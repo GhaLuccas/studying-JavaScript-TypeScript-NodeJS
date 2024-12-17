@@ -5,7 +5,7 @@ const FetchUrl = async()=>{
     try{
         const response = await fetch(`${BaseUrl}?${params}`);
         if (response.ok){
-            data = await response.json();
+            const data = await response.json();
             console.log(data);
         }else {
             throw new Error("HTTP Failed : ",response.status);
@@ -13,7 +13,6 @@ const FetchUrl = async()=>{
     }catch(erro){
         console.log("ERROR : ",erro);
     }
-
 }
 
 FetchUrl()
